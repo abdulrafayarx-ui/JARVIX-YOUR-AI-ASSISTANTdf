@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Implicit & Explicit Sentences</title>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+
+    body {
+        background: #0b1020;
+        color: white;
+        overflow-x: hidden;
+    }
+
+    /* INTRO SCREEN */
+    #intro {
+        position: fixed;
+        inset: 0;
+        background: linear-gradient(135deg, #0b1020, #1a0b35);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 100;
+        animation: hideIntro 1s ease forwards;
+        animation-delay: 3s;
+    }
+
+    .intro-text {
+        text-align: center;
+        animation: zoomIn 1.2s ease;
+    }
+
+    .intro-text h1 {
+        font-size: clamp(40px, 8vw, 90px);
+        background: linear-gradient(90deg, #a855f7, #ec4899, #38bdf8);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: glow 2s infinite alternate;
+    }
+
+    .intro-text p {
+        margin-top: 15px;
+        color: #cbd5e1;
+        font-size: 20px;
+        letter-spacing: 5px;
+    }
+
+    /* MAIN WEBSITE */
+    #main {
+        min-height: 100vh;
+        padding: 60px 20px;
+        opacity: 0;
+        animation: showMain 1s ease forwards;
+        animation-delay: 3.5s;
+    }
+
+    .container {
+        max-width: 900px;
+        margin: auto;
+    }
+
+    .header {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    .header h1 {
+        font-size: clamp(32px, 5vw, 60px);
+        margin-bottom: 15px;
+        background: linear-gradient(90deg, #a855f7, #ec4899);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .header p {
+        color: #94a3b8;
+        font-size: 18px;
+    }
+
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 25px;
+    }
+
+    .card {
+        background: rgba(255,255,255,0.06);
+        border: 1px solid rgba(255,255,255,0.1);
+        border-radius: 20px;
+        padding: 30px;
+        transition: 0.3s;
+    }
+
+    .card:hover {
+        transform: translateY(-8px);
+        background: rgba(255,255,255,0.1);
+    }
+
+    .card h2 {
+        margin-bottom: 20px;
+        font-size: 28px;
+    }
+
+    .explicit h2 {
+        color: #38bdf8;
+    }
+
+    .implicit h2 {
+        color: #ec4899;
+    }
+
+    .sentence {
+        background: rgba(0,0,0,0.2);
+        padding: 15px;
+        border-radius: 12px;
+        margin-top: 12px;
+        color: #e2e8f0;
+        line-height: 1.5;
+    }
+
+    footer {
+        text-align: center;
+        margin-top: 50px;
+        color: #64748b;
+    }
+
+    /* ANIMATIONS */
+
+    @keyframes zoomIn {
+        0% {
+            opacity: 0;
+            transform: scale(0.5);
+        }
+
+        100% {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    @keyframes glow {
+        from {
+            filter: drop-shadow(0 0 5px #a855f7);
+        }
+
+        to {
+            filter: drop-shadow(0 0 25px #ec4899);
+        }
+    }
+
+    @keyframes hideIntro {
+        to {
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
+
+    @keyframes showMain {
+        to {
+            opacity: 1;
+        }
+    }
+
+</style>
+</head>
+
+<body>
+
+<!-- INTRO -->
+<div id="intro">
+    <div class="intro-text">
+        <h1>Abdul Rafay RA</h1>
+        <p>WELCOME</p>
+    </div>
+</div>
+
+
+<!-- MAIN WEBSITE -->
+<div id="main">
+
+    <div class="container">
+
+        <div class="header">
+            <h1>Check My Implicit & Explicit Sentences</h1>
+            <p>English Grammar Assignment</p>
+        </div>
+
+
+        <div class="cards">
+
+            <!-- EXPLICIT -->
+            <div class="card explicit">
+                <h2>Explicit Sentences</h2>
+
+                <div class="sentence">
+                    1. Ali is playing football in the park.
+                </div>
+
+                <div class="sentence">
+                    2. Sara reads a book every day.
+                </div>
+
+                <div class="sentence">
+                    3. The sun rises in the east.
+                </div>
+
+            </div>
+
+
+            <!-- IMPLICIT -->
+            <div class="card implicit">
+                <h2>Implicit Sentences</h2>
+
+                <div class="sentence">
+                    1. Please close the door.
+                </div>
+
+                <div class="sentence">
+                    2. Be quiet in the library.
+                </div>
+
+                <div class="sentence">
+                    3. Come here quickly.
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <footer>
+            Created by Abdul Rafay RA
+        </footer>
+
+    </div>
+
+</div>
+
+</body>
+</html>
